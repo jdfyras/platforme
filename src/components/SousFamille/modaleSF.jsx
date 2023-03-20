@@ -121,9 +121,9 @@ const Ajouter=()=> {
 
        <BsDatabaseAdd onClick={handleShow}/>
 
-      <Modal show={show} onHide={handleClose}>
+       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Ajouter une sous famille</Modal.Title>
+          <Modal.Title>Modifier un sous famille</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
@@ -138,25 +138,32 @@ const Ajouter=()=> {
 
 
             <Form.Group>
+              <Form.Label>Famille*</Form.Label>
+
+            <Form.Control
+                placeholder="choisir"
+              />
+            </Form.Group>
+
+            <Form.Group>
               <Form.Label>Libellé*</Form.Label>
 
             <Form.Control
-               
+                placeholder="entrer un libellé"
               />
             </Form.Group>
             <Form.Group>
-
-
-
-              <Form.Label typeof='color'>couleur*</Form.Label>
-
-            <Form.Control></Form.Control>
-            </Form.Group>
-            <Form.Group>
-              <Form.Label>Ordre*</Form.Label>
+              <Form.Label>Prix sousfamille ht *</Form.Label>
 
             <Form.Control
               
+              />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label>Prix sousfamille_ttc *</Form.Label>
+
+            <Form.Control
+                
               />
             </Form.Group>
 

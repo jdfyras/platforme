@@ -7,20 +7,27 @@ import { BsTrash3 } from "react-icons/bs";
 import { BsExclamationOctagon,BsDatabaseAdd } from "react-icons/bs";
 
 const Modify=()=> {
-  const [show, setShow] = useState(false);
+  // const Img=()=>{
 
+  // }
+  const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
+  const ColorPicker = () => {
+  const [color, setColor] = useState(null);
+  return (
+    <input type="color" value={color} onChange={e => setColor(e.target.value)} />
+  );
+}
   return (
     <>
 
        <BsFillPencilFill onClick={handleShow}/>
-
-      <Modal show={show} onHide={handleClose}>
+       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modifier un groupe</Modal.Title>
+          <Modal.Title>Modifier une Famille</Modal.Title>
         </Modal.Header>
+
         <Modal.Body>
           <Form>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
@@ -41,6 +48,40 @@ const Modify=()=> {
               />
             </Form.Group>
 
+
+            <Form.Group>
+              <Form.Label typeof='color'>couleur*</Form.Label>
+            <Form>{ColorPicker()}</Form>
+            </Form.Group>
+
+            <Form.Group>
+              <Form.Label>facon de calcule*</Form.Label>
+
+            <Form.Control
+                placeholder="entrer un libellé"
+              />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label>image*</Form.Label>
+
+            <Form.Control
+                placeholder="entrer un image"
+              />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label>Gamme*</Form.Label>
+
+            <Form.Control
+                placeholder="entrer un gamme"
+              />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label>ordre*</Form.Label>
+
+            <Form.Control
+                placeholder="entrer un ordre"
+              />
+            </Form.Group>
 
           </Form>
         </Modal.Body>
@@ -76,7 +117,7 @@ const Delete=()=> {
         <Modal.Header closeButton>
           <Modal.Title><BsExclamationOctagon/> supprimer </Modal.Title>
         </Modal.Header>
-        <Modal.Body>Voulez vous vraiment supprimer cette Gamme!</Modal.Body>
+        <Modal.Body>Voulez vous vraiment supprimer cette famille!</Modal.Body>
         <Modal.Footer>   
             <Button variant="success" >
             Oui
@@ -93,6 +134,9 @@ const Delete=()=> {
 
 
 const Ajouter=()=> {
+//  const Img=()=>{
+
+//   }
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -101,15 +145,18 @@ const ColorPicker = () => {
   return (
     <input type="color" value={color} onChange={e => setColor(e.target.value)} />
   );
+  
 }
+
+//<BsDatabaseAdd onClick={handleShow}/>
   return (
-    <>
+        <>
 
        <BsDatabaseAdd onClick={handleShow}/>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Ajouter un groupe</Modal.Title>
+          <Modal.Title>Modifier une Famille</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
@@ -131,28 +178,42 @@ const ColorPicker = () => {
               />
             </Form.Group>
 
-
-            
             <Form.Group>
               <Form.Label typeof='color'>couleur*</Form.Label>
             <Form>{ColorPicker()}</Form>
             </Form.Group>
 
-
-
-
             <Form.Group>
-              <Form.Label>Ordre*</Form.Label>
+              <Form.Label>facon de calcule*</Form.Label>
 
             <Form.Control
-                placeholder="entrer un Ordre"
+                placeholder="entrer un libellé"
               />
             </Form.Group>
+            <Form.Group>
+              <Form.Label>image*</Form.Label>
 
+            <Form.Control
+                placeholder="entrer un image"
+              />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label>Gamme*</Form.Label>
 
+            <Form.Control
+                placeholder="entrer un gamme"
+              />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label>ordre*</Form.Label>
+
+            <Form.Control
+                placeholder="entrer un ordre"
+              />
+            </Form.Group>
           </Form>
         </Modal.Body>
-        <Modal.Footer>  
+        <Modal.Footer>
         <Button variant="success" >
             Enregistrer
           </Button>
