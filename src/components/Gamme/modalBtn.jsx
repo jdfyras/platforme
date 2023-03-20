@@ -5,6 +5,7 @@ import { BsFillPencilFill } from "react-icons/bs";
 import Form from 'react-bootstrap/Form';
 import { BsTrash3 } from "react-icons/bs";
 import { BsExclamationOctagon,BsDatabaseAdd } from "react-icons/bs";
+
 const Modify=()=> {
   const [show, setShow] = useState(false);
 
@@ -44,12 +45,13 @@ const Modify=()=> {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Annuler
-          </Button>
-          <Button variant="primary" >
+        <Button variant="success" >
             Enregistrer
           </Button>
+          <Button variant="danger" onClick={handleClose}>
+            Annuler
+          </Button>
+
         </Modal.Footer>
       </Modal>
     </>
@@ -63,6 +65,7 @@ const Delete=()=> {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  
 
   return (
     <>
@@ -93,7 +96,12 @@ const Ajouter=()=> {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
+const ColorPicker = () => {
+  const [color, setColor] = useState(null);
+  return (
+    <input type="color" value={color} onChange={e => setColor(e.target.value)} />
+  );
+}
   return (
     <>
 
@@ -101,7 +109,7 @@ const Ajouter=()=> {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Ajouter une Marque</Modal.Title>
+          <Modal.Title>Ajouter un groupe</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
@@ -127,8 +135,7 @@ const Ajouter=()=> {
 
 
               <Form.Label typeof='color'>couleur*</Form.Label>
-
-            <Form.Control></Form.Control>
+            <Form>{ColorPicker()}</Form>
             </Form.Group>
             <Form.Group>
               <Form.Label>Ordre*</Form.Label>
@@ -141,13 +148,14 @@ const Ajouter=()=> {
 
           </Form>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Annuler
-          </Button>
-          <Button variant="primary" >
+        <Modal.Footer>  
+        <Button variant="success" >
             Enregistrer
           </Button>
+          <Button variant="danger" onClick={handleClose}>
+            Annuler
+          </Button>
+
         </Modal.Footer>
       </Modal>
     </>

@@ -18,7 +18,7 @@ const Modify=()=> {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modifier un groupe</Modal.Title>
+          <Modal.Title>Modifier un sous famille</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
@@ -33,10 +33,32 @@ const Modify=()=> {
 
 
             <Form.Group>
+              <Form.Label>Famille*</Form.Label>
+
+            <Form.Control
+                placeholder="choisir"
+              />
+            </Form.Group>
+
+            <Form.Group>
               <Form.Label>Libellé*</Form.Label>
 
             <Form.Control
                 placeholder="entrer un libellé"
+              />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label>Prix sousfamille ht *</Form.Label>
+
+            <Form.Control
+              
+              />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label>Prix sousfamille_ttc *</Form.Label>
+
+            <Form.Control
+                
               />
             </Form.Group>
 
@@ -73,7 +95,7 @@ const Delete=()=> {
         <Modal.Header closeButton>
           <Modal.Title><BsExclamationOctagon/> supprimer </Modal.Title>
         </Modal.Header>
-        <Modal.Body>Voulez vous vraiment supprimer cette marque!</Modal.Body>
+        <Modal.Body>Voulez vous vraiment supprimer cette sous famille!</Modal.Body>
         <Modal.Footer>   
             <Button variant="success" >
             Oui
@@ -101,7 +123,7 @@ const Ajouter=()=> {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Ajouter une Marque</Modal.Title>
+          <Modal.Title>Ajouter une sous famille</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
@@ -119,7 +141,7 @@ const Ajouter=()=> {
               <Form.Label>Libellé*</Form.Label>
 
             <Form.Control
-                placeholder="entrer un libellé"
+               
               />
             </Form.Group>
             <Form.Group>
@@ -134,7 +156,7 @@ const Ajouter=()=> {
               <Form.Label>Ordre*</Form.Label>
 
             <Form.Control
-                placeholder="entrer un Ordre"
+              
               />
             </Form.Group>
 

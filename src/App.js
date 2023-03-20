@@ -1,11 +1,10 @@
 import './App.css';
-import TabGamme from './components/Gamme/gamme';
+import TabSF from './components/SousFamille/SousFamille';
 
 function App() {
   return (
     <div className="App">
-        <TabGamme/>
-    
+      <TabSF/>
     </div>
   );
 }

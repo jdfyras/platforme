@@ -1,8 +1,16 @@
+import { useState } from 'react';
 import Table from 'react-bootstrap/Table';
-import Boutton from './button';
+import Boutton from '../Gamme/button';
 import Container from 'react-bootstrap/Container';
 // import Input from'./input'
 function TabGamme() {
+  const ColorPicker = () => {
+  const [color, setColor] = useState(null);
+
+  return (
+    <input type="color" value={color} onChange={e => setColor(e.target.value)} />
+  );
+}
   return (
     <Container>
       {/* <div style={{alignItems: 'center'}}>
@@ -22,7 +30,7 @@ function TabGamme() {
           <tr>
           <td style={{ color: '#0000FF' }}>2</td>
           <td>cadeaux</td>
-          <td></td>
+          <td>{ColorPicker()}</td>
           <td>1</td>
            <td>{Boutton()}</td>
         </tr>  
