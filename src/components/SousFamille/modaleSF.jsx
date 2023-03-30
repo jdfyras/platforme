@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+import React, { useState } from "react";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 import { BsFillPencilFill } from "react-icons/bs";
-import Form from 'react-bootstrap/Form';
+import Form from "react-bootstrap/Form";
 import { BsTrash3 } from "react-icons/bs";
-import { BsExclamationOctagon,BsDatabaseAdd } from "react-icons/bs";
-const Modify=()=> {
+import { BsExclamationOctagon, BsDatabaseAdd } from "react-icons/bs";
+const Modify = () => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -13,8 +13,7 @@ const Modify=()=> {
 
   return (
     <>
-
-       <BsFillPencilFill onClick={handleShow}/>
+      <BsFillPencilFill onClick={handleShow} />
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -24,63 +23,44 @@ const Modify=()=> {
           <Form>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Code*</Form.Label>
-              <Form.Control
-                placeholder="entrer un code"
-                autoFocus
-              />
+              <Form.Control placeholder="entrer un code" autoFocus />
             </Form.Group>
-
-
 
             <Form.Group>
               <Form.Label>Famille*</Form.Label>
 
-            <Form.Control
-                placeholder="choisir"
-              />
+              <Form.Control placeholder="choisir" />
             </Form.Group>
 
             <Form.Group>
               <Form.Label>Libellé*</Form.Label>
 
-            <Form.Control
-                placeholder="entrer un libellé"
-              />
+              <Form.Control placeholder="entrer un libellé" />
             </Form.Group>
             <Form.Group>
               <Form.Label>Prix sousfamille ht *</Form.Label>
 
-            <Form.Control
-              
-              />
+              <Form.Control />
             </Form.Group>
             <Form.Group>
               <Form.Label>Prix sousfamille_ttc *</Form.Label>
 
-            <Form.Control
-                
-              />
+              <Form.Control />
             </Form.Group>
-
-
           </Form>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Annuler
           </Button>
-          <Button variant="primary" >
-            Enregistrer
-          </Button>
+          <Button variant="primary">Enregistrer</Button>
         </Modal.Footer>
       </Modal>
     </>
   );
 };
 
-
-
-const Delete=()=> {
+const Delete = () => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -88,40 +68,38 @@ const Delete=()=> {
 
   return (
     <>
-
-       <BsTrash3 onClick={handleShow}/>
+      <BsTrash3 onClick={handleShow} />
 
       <Modal show={show} onHide={handleClose} animation={false}>
         <Modal.Header closeButton>
-          <Modal.Title><BsExclamationOctagon/> supprimer </Modal.Title>
+          <Modal.Title>
+            <BsExclamationOctagon /> supprimer{" "}
+          </Modal.Title>
         </Modal.Header>
-        <Modal.Body>Voulez vous vraiment supprimer cette sous famille!</Modal.Body>
-        <Modal.Footer>   
-            <Button variant="success" >
-            Oui
-          </Button>
+        <Modal.Body>
+          Voulez vous vraiment supprimer cette sous famille!
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="success">Oui</Button>
           <Button variant="danger" onClick={handleClose}>
             Non
           </Button>
-
         </Modal.Footer>
       </Modal>
     </>
   );
 };
 
-
-const Ajouter=()=> {
+const Ajouter = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   return (
     <>
+      <BsDatabaseAdd onClick={handleShow} />
 
-       <BsDatabaseAdd onClick={handleShow}/>
-
-       <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Modifier un sous famille</Modal.Title>
         </Modal.Header>
@@ -129,59 +107,41 @@ const Ajouter=()=> {
           <Form>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Code*</Form.Label>
-              <Form.Control
-                placeholder="entrer un code"
-                autoFocus
-              />
+              <Form.Control placeholder="entrer un code" autoFocus />
             </Form.Group>
-
-
 
             <Form.Group>
               <Form.Label>Famille*</Form.Label>
 
-            <Form.Control
-                placeholder="choisir"
-              />
+              <Form.Control placeholder="choisir" />
             </Form.Group>
 
             <Form.Group>
               <Form.Label>Libellé*</Form.Label>
 
-            <Form.Control
-                placeholder="entrer un libellé"
-              />
+              <Form.Control placeholder="entrer un libellé" />
             </Form.Group>
             <Form.Group>
               <Form.Label>Prix sousfamille ht *</Form.Label>
 
-            <Form.Control
-              
-              />
+              <Form.Control />
             </Form.Group>
             <Form.Group>
               <Form.Label>Prix sousfamille_ttc *</Form.Label>
 
-            <Form.Control
-                
-              />
+              <Form.Control />
             </Form.Group>
-
-
           </Form>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Annuler
           </Button>
-          <Button variant="primary" >
-            Enregistrer
-          </Button>
+          <Button variant="primary">Enregistrer</Button>
         </Modal.Footer>
       </Modal>
     </>
   );
 };
 
-
-export { Modify, Delete,Ajouter};
+export { Modify, Delete, Ajouter };

@@ -5,8 +5,8 @@ import { Modify, Delete} from './modale'
 function Boutton() {
   return (
     <>
-    <Button variant="outline-info">{Modify()}</Button>{' '}
-    <Button variant="outline-danger">{Delete()}</Button>{' '}
+    <Button variant="outline-info">{Modify()}</Button>
+    <Button variant="outline-danger">{Delete()}</Button>
       
     </>
   );
